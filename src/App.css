@@ -1,0 +1,75 @@
+html, body, #root, #root>div {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+}
+
+
+#locationContainer {
+  width: 320px;
+  height: 100%;
+  background-color: #FFF;
+  position: absolute;
+  top: 0;
+  left: -320px;
+  bottom: 0;
+  z-index: 9999;
+  transition: left 1s;
+  overflow: hidden;
+}
+
+#locationContainer.open {
+  left: 0;
+}
+
+@media (min-width: 768px) {
+  #locationContainer {
+    left: 0;
+  }
+}
+
+#locationInfo{
+  padding:1em;
+  flex: auto;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  height: calc(100% - (207px));
+}
+
+#mapContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@media (min-width: 768px) {
+  #mapContainer {
+    left: 320px;
+  }
+}
+
+
+.hamburger-menu {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hamburger-menu .bar {
+    width: 20px;
+    height: 2px;
+    background-color: #FFF;
+    margin: 6px 0;
+    transition: 0.4s;
+}

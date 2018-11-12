@@ -1,0 +1,43 @@
+AIzaSyCwBJFP9M-JYwwgTsmepSEmw2PwWNXjNGI
+
+json 5 places
+
+{
+ "places: [
+	{
+	   "flickr_tags": "stanley hotel",
+           "latitude": 90.0,
+	   "longitude": 90.0,
+	   "title": "Stanley Hotel"
+           "description": "some description about this place goes here"
+	},
+	{
+	   "flickr_tags": "lily lake rmnp",
+           "latitude": 90.0,
+	   "longitude": 90.0,
+	   "title": "Lily Lake"
+           "description": "some description about this place goes here"
+	},
+	{
+	   "flickr_tags": "lake estes colorado",
+           "latitude": 90.0,
+	   "longitude": 90.0,
+	   "title": "Lake Estes"
+           "description": "some description about this place goes here"
+	},
+	{
+	   "flickr_tags": "rmnp rocky mountain national park trail ridge road",
+           "latitude": 90.0,
+	   "longitude": 90.0,
+	   "title": "Trail Ridge Road"
+           "description": "some description about this place goes here"
+	},
+	{
+	   "flickr_tags": "rmnp rocky mountain national park alluvial fan",
+           "latitude": 90.0,
+	   "longitude": 90.0,
+	   "title": "Alluvial Fan"
+           "description": "some description about this place goes here"
+	}
+  ]
+}
