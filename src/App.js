@@ -26,6 +26,7 @@ class App extends Component {
     this.onPointSelected = this.onPointSelected.bind(this);
     this.fetchWikipedia = this.fetchWikipedia.bind(this);
     this.setWikiInfo = this.setWikiInfo.bind(this);
+    this.gm_authFailure = this.gm_authFailure.bind(this);
 
     this.state = {
       allPoints: [//sets up locations
@@ -68,6 +69,14 @@ class App extends Component {
     }
 
     this.state.points = this.state.allPoints
+  }
+
+  componentDidMount(){
+    window.gm_authFailure = this.gm_authFailure;
+  }
+
+  gm_authFailure() {
+    alert("Error loading Google Maps.  Please try again.")
   }
 
   onFilterChange(value) {
