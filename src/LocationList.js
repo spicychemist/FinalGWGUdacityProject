@@ -49,18 +49,17 @@ class LocationList extends Component {
             <option value="historical">Historical Locations</option>
           </select>
 
-          <div className="location-list">
-            <ul>
+            <ul className="location-list">
               {points.map((point)=> (
                 <li key={point.id}>
-                    <a aria-label='location information link' href='#' onClick={(e) => {
+                    <a href='#' onClick={(e) => {
+                      //stop event from propogating and notify of location click
                       e.preventDefault();
                       this.locationClicked(point.id);
                     }}>{point.title}</a>
                 </li>
               ))}
             </ul>
-          </div>
       </div>
     )
   }

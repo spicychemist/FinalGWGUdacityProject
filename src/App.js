@@ -16,7 +16,10 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-
+    window.addEventListener("unhandledrejection", function (event) {
+        alert('Loading Error: Please Try Again Later')
+        event.preventDefault();
+    });
     this.onFilterChange = this.onFilterChange.bind(this);
     this.hamburgerClicked = this.hamburgerClicked.bind(this);
     this.onCloseButtonClicked = this.onCloseButtonClicked.bind(this);
@@ -25,7 +28,7 @@ class App extends Component {
     this.setWikiInfo = this.setWikiInfo.bind(this);
 
     this.state = {
-      allPoints: [
+      allPoints: [//sets up locations
         {
           id: 0,
           title: "Coors Field",
@@ -68,13 +71,11 @@ class App extends Component {
   }
 
   onFilterChange(value) {
-
+    //filters locations for a specific category
     let points = [];
     points = this.state.allPoints.filter((point) => {
       return (point.category === value || value === 'all');
     });
-
-    console.log(points);
     this.setState({points});
   }
 
@@ -91,6 +92,7 @@ class App extends Component {
   }
 
   onPointSelected(point) {
+    //sets the selected point and initializes wikipedia fetch
     let selectedPoint = point;
     this.setState({selectedPoint});
     this.fetchWikipedia(selectedPoint);
@@ -135,7 +137,7 @@ class App extends Component {
         <div id="mapContainer">
           <MapContainer points={this.state.points} selectedPoint={this.state.selectedPoint} onPointSelected={this.onPointSelected} />
         </div>
-        <div id="locationContainer" className={this.state.menuActive ? 'open': null} >
+        <aside id="locationContainer" className={this.state.menuActive ? 'open': null} >
           <LocationList
             points={this.state.points}
             onFilterChange={this.onFilterChange}
@@ -145,12 +147,12 @@ class App extends Component {
           <div id='locationInfo'>
             <LocationInfo info={this.state.wikiInfo}/>
           </div>
-        </div>
-        <div aria-label="Toggle Location Information" role='navigation' className="hamburger-menu" onClick={this.hamburgerClicked}>
+        </aside>
+        <button aria-label="Toggle Location Information" role='navigation' className="hamburger-menu" onClick={this.hamburgerClicked}>
           <div className="bar"></div>
           <div className="bar"></div>
           <div className="bar"></div>
-        </div>
+        </button>
       </div>
     );
   }

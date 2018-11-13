@@ -61,7 +61,7 @@ class MapContainer extends Component {
     for (var i = 0; i < points.length; i++) {
       bounds.extend(points[i]);
     }
-
+//sets up map
     return(
       <Map aria-label='map of locations'
         google={this.props.google}
@@ -103,6 +103,10 @@ class MapContainer extends Component {
   }
 }
 
+const LoadingContainer = (props) => (
+  <div>Loading...</div>
+)
 export default GoogleApiWrapper({
-  apiKey: ("AIzaSyCwBJFP9M-JYwwgTsmepSEmw2PwWNXjNGI")
+  apiKey: ("AIzaSyCwBJFP9M-JYwwgTsmepSEmw2PwWNXjNGI"),
+  LoadingContainer: LoadingContainer
 })(MapContainer)
